@@ -357,7 +357,6 @@ for o in Order.query.all():
 
 # seed with 10 shipments
 
-
 if Shipment.query.count() != 10:
 
     shipment_1 = Shipment(products=[beetlejuice_sandworm.id])
