@@ -19,7 +19,6 @@ Open a terminal and navigate to the backend directory with `cd backend`.
 `python3 -m pip install -r requirements.txt` to download all the requirements.
 Run `export FLASK_APP=app` to tell flask where the application is located.
 
-In a new terminal window:
 You'll need to have [MySQL](https://www.mysql.com/) installed and available at port 3306 on your machine. You can change this port to one you'd prefer to use later, when we define the database URI.
 
 Get a MySQL repl going, and `create database SpookyZephyrWarehouse;`. Type `show databases;` to ensure that it's there and `exit;`.
@@ -43,3 +42,7 @@ You should something like this:
  If you navigate to `http://127.0.0.1:5000/` in a browser, you'll see the text "Hello, World!".
 
  When you're done, you can simply `deactivate` to end the virtual environment.
+
+### General information
+
+In `backend/app/__init__.py` you'll find the `uri` variable just underneath the imports at the top of the page. This is the string that [SqlAlchemy]() will use to connect to the database. Go ahead and replace `db_user` (your local database admin user), `db_pw` (database password), `db_port` (whatever port MySQL is available on on your machine) with whatever is compatible with your setup. You'll notice that we're using `pymysql` in the `ENGINE` definition.
