@@ -24,12 +24,15 @@ class Customer(db.Model):
 
     def __init__(self, full_name, contact_info_dict):
         self.full_name = full_name
+        
         key_list = ['phone_number', 'street_address', 'town/city', 'state_code', 'zip_code']
         for key in contact_info_dict:
             if key not in key_list:
-                return 'You must include key/value for {}.'
+                print('You must include key/value for {}.'.format(key))
+                return 'You must include key/value for {}.'.format(key)
             if contact_info_dict[key] == '':
-                return 'You must include key/value for {}.'
+                print('You must include key/value for {}.'.format(key))
+                return 'You must include key/value for {}.'.format(key)
         self.contact_info = contact_info_dict
 
     def __repr__(self):
