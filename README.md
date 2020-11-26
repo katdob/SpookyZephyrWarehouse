@@ -6,6 +6,7 @@
 `git clone https://github.com/katdob/SpookyZephyrWarehouse.git` and `cd SpookyZephyrWarehouse`.**
 
 ### Get the frontend up and running:
+
 WIP! Check back later for updates.
 
 ### Get the backend up and running:
@@ -17,7 +18,7 @@ Open a terminal and navigate to the backend directory with `cd backend`.
 Run `export FLASK_APP=app` to tell flask where the application is located.
 
 In a new terminal window:
-You'll need to have [https://www.mysql.com/](MySQL) installed and available at port 3306 on your machine. You can change this port to one you'd prefer to use later, when we define the database URI.
+You'll need to have [MySQL](https://www.mysql.com/) installed and available at port 3306 on your machine. You can change this port to one you'd prefer to use later, when we define the database URI.
 
 Get a MySQL repl going, and `create database SpookyZephyrWarehouse;`. Type `show databases;` to ensure that it's there and `exit;`.
 
