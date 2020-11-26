@@ -53,7 +53,7 @@ class Order(db.Model):
 
     def __repr__(self):
         customer = Customer.query.filter_by(id=self.customer_id).first()
-        return '<Order {} for customer {} with id customer_id {}, ordered on {}>'.format(
+        return '<Order {} for customer {} with id {}, ordered on {}>'.format(
             self.id, customer.full_name, customer.id, self.ordered_on)
 
 
@@ -67,7 +67,8 @@ class Product(db.Model):
 
     def __init__(self, name, description):
         if description == '' or name == '':
-            return 'You must include a name and description'
+            print('You must include a name: {} and description: {}'.format(name, description))
+            # return 'You must include a name and description'
         self.name = name
         self.description = description
 

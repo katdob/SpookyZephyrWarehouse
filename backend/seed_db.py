@@ -1,6 +1,7 @@
 from app import app, db
 from app.models import *
 
+
 # seed with 5 customers
 
 if Customer.query.filter_by(full_name='Kat Dob').first():
@@ -88,9 +89,18 @@ else:
     db.session.add(new_customer)
     db.session.commit()
 
-print('\nCreated {} customers:\n{}'.format(Customer.query.count(), Customer.query.all()))
+print('\n\nCreated {} customers:\n'.format(Customer.query.count()))
+for c in Customer.query.all():
+    print(c)
+kat = Customer.query.all()[0]
+clarence = Customer.query.all()[1]
+fred = kat = Customer.query.all()[2]
+lana = Customer.query.all()[3]
+millie = Customer.query.all()[4]
+
 
 # seed with 3 suppliers
+
 if Supplier.query.filter_by(name='HalloweenTown').first():
     pass
 else:
@@ -142,10 +152,207 @@ else:
     db.session.add(new_supplier)
     db.session.commit()
 
-print('\nCreated {} suppliers: {}\n'.format(Supplier.query.count(), Supplier.query.all()))
+print('\n\nCreated {} suppliers:\n'.format(Supplier.query.count()))
+for s in Supplier.query.all():
+    print(s)
+halloweentown = Customer.query.all()[0]
+sleepyhollow = Customer.query.all()[1]
+hauntedlabrynth = Customer.query.all()[2]
+
 
 # seed with 10 products
 
+# https://www.gemmy.com/black-cat/
+if Product.query.filter_by(name='Black Cat').first():
+    pass
+else:
+    new_product = Product(
+        name='Black Cat',
+        description='Frighten your guests with this creepy Airblown inflatable character. \
+            The black cat is prepared to pounce into any Halloween scene.'
+    )
+    new_product.suppliers = [hauntedlabrynth]
+    db.session.add(new_product)
+    db.session.commit()
+
+# https://www.homedepot.com/p/Warner-9-5-ft-Pre-Lit-Beetlejuice-Sandworm-Animated-Airblown-Inflatable-224336/308475547
+if Product.query.filter_by(name='Beetlejuice Sandworm').first():
+    pass
+else:
+    new_product = Product(
+        name='Beetlejuice Sandworm',
+        description='Easily add a spooky touch to your Halloween décor \
+            with this 9.5 ft. Pre-Lit Inflatable Animated Beetlejuice \
+            Sandworm WB Airblown. Each scene self-inflates for a quick and \
+            easy setup. All stakes and tethers are included for added security. \
+            Animated: tongue moves from side to side.'
+    )
+    new_product.suppliers = [sleepyhollow]
+    db.session.add(new_product)
+    db.session.commit()
+
+# https://www.gemmy.com/animated-audrey-from-little-shop-of-horrors/
+if Product.query.filter_by(name='Little Shop of Horrors Audrey').first():
+    pass
+else:
+    new_product = Product(
+        name='Little Shop of Horrors Audrey',
+        description='Amaze your guests with this animated giant \
+        Airblown inflatable featuring Audrey from Little Shop of \
+        Horrors! Audrey comes to life in this amazing Halloween scene \
+        and her tongue moves from side to side.'
+    )
+    new_product.suppliers = [halloweentown]
+    db.session.add(new_product)
+    db.session.commit()
+
+# https://www.gemmy.com/animated-globe-fire-ice-dragon/
+if Product.query.filter_by(name='Dragon with Globe').first():
+    pass
+else:
+    new_product = Product(
+        name='Dragon with Globe',
+        description='Decorate your yard with this incredible \
+        Projection Airblown® Globe. It creates a spooky \
+        Halloween light show with realistic, flickering flames.'
+    )
+    new_product.suppliers = [sleepyhollow]
+    db.session.add(new_product)
+    db.session.commit()
+
+# https://www.gemmy.com/zero-in-doghouse/
+if Product.query.filter_by(name='Zero with Doghouse').first():
+    pass
+else:
+    new_product = Product(
+        name='Zero with Doghouse',
+        description='Greet your guests and neighbors with the \
+        familiar face of this Airblown® inflatable character. \
+        Zero from The Nightmare Before Christmas stands with his \
+        doghouse in this fun Halloween scene.'
+    )
+    new_product.suppliers = [hauntedlabrynth, halloweentown, sleepyhollow]
+    db.session.add(new_product)
+    db.session.commit()
+
+# https://www.gemmy.com/projection-fire-ice-two-headed-dragon/
+if Product.query.filter_by(name='Two Headed Dragon').first():
+    pass
+else:
+    new_product = Product(
+        name='Two Headed Dragon',
+        description='Double trouble awaits you this season \
+        with the Animated Inflatable 2-Headed Dragon. Featuring \
+        an incredible fire-and-ice and flaming mouth lighting \
+        effect, this 2-headed creature will frighten visitors and \
+        trick-or-treaters near and far. Stands over 7-1/2 ft. tall.'
+    )
+    new_product.suppliers = [halloweentown, hauntedlabrynth]
+    db.session.add(new_product)
+    db.session.commit()
+
+# https://www.gemmy.com/haunted-castle-archway/
+if Product.query.filter_by(name='Haunted Castle Archway').first():
+    pass
+else:
+    new_product = Product(
+        name='Haunted Castle Archway',
+        description='Double trouble awaits you this season with \
+        the Animated Inflatable 2-Headed Dragon. Featuring an \
+        incredible fire-and-ice and flaming mouth lighting effect, \
+        this 2-headed creature will frighten visitors and \
+        trick-or-treaters near and far.'
+    )
+    new_product.suppliers = [hauntedlabrynth]
+    db.session.add(new_product)
+    db.session.commit()
+
+# https://www.gemmy.com/green-and-black-spider/
+if Product.query.filter_by(name='Green and Black Spider').first():
+    pass
+else:
+    new_product = Product(
+        name='Green and Black Spider',
+        description='Light up the night with this giant Airblown \
+        Inflatable character. The spider projects psychedelic spirals \
+        of green light from its body.'
+    )
+    new_product.suppliers = [sleepyhollow, hauntedlabrynth]
+    db.session.add(new_product)
+    db.session.commit()
+
+# https://www.gemmy.com/tree-with-ligthing-pumpkins/
+if Product.query.filter_by(name='Tree with Pumpkins').first():
+    pass
+else:
+    new_product = Product(
+        name='Tree with Pumpkins',
+        description='Frighten your guests with this amazing \
+        inflatable scene. The terrifying tree stands tall with \
+        its ghoulish companions and spooky Jack-O\'-Lanterns.'
+    )
+    new_product.suppliers = [halloweentown, hauntedlabrynth]
+    db.session.add(new_product)
+    db.session.commit()
+
+# https://www.gemmy.com/ecto-1-with-slimer-out-of-window/
+if Product.query.filter_by(name='Slimer in Ghostbusters Mobile').first():
+    pass
+else:
+    new_product = Product(
+        name='Slimer in Ghostbusters Mobile',
+        description='There\'s something strange in your neighborhood! \
+            This Airblown® Slimer looks spooky as he greets guests from \
+            The Ghostbusters Ecto-1. It comes with everything needed for \
+            easy outdoor setup.'
+    )
+    new_product.suppliers = [halloweentown, hauntedlabrynth]
+    db.session.add(new_product)
+    db.session.commit()
+
+black_cat = Product.query.all()[0]
+beetlejuice_sandworm = Product.query.all()[1]
+audrey_plant = Product.query.all()[2]
+dragon_with_globe = Product.query.all()[3]
+zero_with_doghouse = Product.query.all()[4]
+two_headed_dragon = Product.query.all()[5]
+haunted_castle_archway = Product.query.all()[6]
+green_and_black_spider = Product.query.all()[7]
+tree_with_pumpkins = Product.query.all()[8]
+slimer_with_ghostbusters_mobile = Product.query.all()[9]
+print('\n\nCreated {} products: \n'.format(Product.query.count()))
+for p in Product.query.all():
+    print(p)
+
+
 # seed with 5 orders
+
+if Order.query.count() != 5:
+    order_1 = Order(customer_id=kat.id)
+    db.session.add(order_1)
+
+    order_2 = Order(customer_id=clarence.id)
+    db.session.add(order_2)
+
+    order_3 = Order(customer_id=fred.id)
+    db.session.add(order_3)
+
+    order_4 = Order(customer_id=lana.id)
+    db.session.add(order_4)
+
+    order_5 = Order(customer_id=millie.id)
+    db.session.add(order_5)
+
+    db.session.commit()
+
+order_1 = Order.query.all()[0]
+order_2 = Order.query.all()[1]
+order_3 = Order.query.all()[2]
+order_4 = Order.query.all()[3]
+order_5 = Order.query.all()[4]
+print('\n\nCreated {} orders: \n'.format(Order.query.count()))
+for o in Order.query.all():
+    print(o)
+
 
 # seed with 10 shipments
