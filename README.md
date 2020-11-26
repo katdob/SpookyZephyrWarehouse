@@ -11,6 +11,8 @@ WIP! Check back later for updates.
 
 ### Get the backend up and running:
 
+To begin, install [Python 3.8.3](https://www.python.org/).
+
 Open a terminal and navigate to the backend directory with `cd backend`.
 `python3 -m venv venv` to set up the virtual environment.
 `source venv/bin/activate` to activate the virtual environment.
