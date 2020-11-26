@@ -31,6 +31,7 @@ Next, you'll populate the database by running `python3 seed_db.py`. You'll see p
 You'll need to have port 5000 available to run the development server. Run `flask run` to start the development server.
 
 You should something like this:
+
 (venv) your-computer-name:backend you$ flask run
  * Serving Flask app "app"
  * Environment: production
