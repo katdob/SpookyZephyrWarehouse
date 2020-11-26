@@ -1,14 +1,15 @@
-Welcome to Spooky Zephyr Warehouse! Your source for the most impressive inflatables this holiday season.
+# **Welcome to Spooky Zephyr Warehouse! Your source for the most impressive inflatables this holiday season.**
 
 (This is the final project for CS579, BU MET.)
 
-To get started clone this repo.
-`git clone https://github.com/katdob/SpookyZephyrWarehouse.git` and `cd SpookyZephyrWarehouse`.
+**To get started, clone this repo.
+`git clone https://github.com/katdob/SpookyZephyrWarehouse.git` and `cd SpookyZephyrWarehouse`.**
 
-Get the frontend up and running:
+### Get the frontend up and running:
 WIP! Check back later for updates.
 
-Get the backend up and running:
+### Get the backend up and running:
+
 Open a terminal and navigate to the backend directory with `cd backend`.
 `python3 -m venv venv` to set up the virtual environment.
 `source venv/bin/activate` to activate the virtual environment.
@@ -39,4 +40,3 @@ You should something like this:
  If you navigate to `http://127.0.0.1:5000/` in a browser, you'll see the text "Hello, World!".
 
  When you're done, you can simply `deactivate` to end the virtual environment.
- 
