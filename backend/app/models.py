@@ -73,7 +73,7 @@ class Product(db.Model):
         self.description = description
 
     def __repr__(self):
-        return '<Product {}, {}>'.format(self.id, self.name)
+        return '<Product {}, {} suppliers: {}>'.format(self.id, self.name, self.suppliers)
 
 
 class Shipment(db.Model):
@@ -83,6 +83,7 @@ class Shipment(db.Model):
     tracking_no = Column(String(500), index=True)
     products = Column(PickleType, nullable=True) # a list of product ids (int)
 
+    supplier_id = Column(Integer, ForeignKey('suppliers.id'), nullable=False)
     order_id = Column(Integer, ForeignKey('orders.id'), nullable=False)
 
     def __init__(self, products):

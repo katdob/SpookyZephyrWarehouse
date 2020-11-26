@@ -171,7 +171,7 @@ else:
         description='Frighten your guests with this creepy Airblown inflatable character. \
             The black cat is prepared to pounce into any Halloween scene.'
     )
-    new_product.suppliers = [hauntedlabrynth]
+    new_product.suppliers = [hauntedlabrynth.id]
     db.session.add(new_product)
     db.session.commit()
 
@@ -187,7 +187,7 @@ else:
             easy setup. All stakes and tethers are included for added security. \
             Animated: tongue moves from side to side.'
     )
-    new_product.suppliers = [sleepyhollow]
+    new_product.suppliers = [sleepyhollow.id]
     db.session.add(new_product)
     db.session.commit()
 
@@ -202,7 +202,7 @@ else:
         Horrors! Audrey comes to life in this amazing Halloween scene \
         and her tongue moves from side to side.'
     )
-    new_product.suppliers = [halloweentown]
+    new_product.suppliers = [halloweentown.id]
     db.session.add(new_product)
     db.session.commit()
 
@@ -216,7 +216,7 @@ else:
         Projection Airblown® Globe. It creates a spooky \
         Halloween light show with realistic, flickering flames.'
     )
-    new_product.suppliers = [sleepyhollow]
+    new_product.suppliers = [sleepyhollow.id]
     db.session.add(new_product)
     db.session.commit()
 
@@ -231,7 +231,7 @@ else:
         Zero from The Nightmare Before Christmas stands with his \
         doghouse in this fun Halloween scene.'
     )
-    new_product.suppliers = [hauntedlabrynth, halloweentown, sleepyhollow]
+    new_product.suppliers = [hauntedlabrynth.id, halloweentown.id, sleepyhollow.id]
     db.session.add(new_product)
     db.session.commit()
 
@@ -247,7 +247,7 @@ else:
         effect, this 2-headed creature will frighten visitors and \
         trick-or-treaters near and far. Stands over 7-1/2 ft. tall.'
     )
-    new_product.suppliers = [halloweentown, hauntedlabrynth]
+    new_product.suppliers = [halloweentown.id, hauntedlabrynth.id]
     db.session.add(new_product)
     db.session.commit()
 
@@ -263,7 +263,7 @@ else:
         this 2-headed creature will frighten visitors and \
         trick-or-treaters near and far.'
     )
-    new_product.suppliers = [hauntedlabrynth]
+    new_product.suppliers = [hauntedlabrynth.id]
     db.session.add(new_product)
     db.session.commit()
 
@@ -277,7 +277,7 @@ else:
         Inflatable character. The spider projects psychedelic spirals \
         of green light from its body.'
     )
-    new_product.suppliers = [sleepyhollow, hauntedlabrynth]
+    new_product.suppliers = [sleepyhollow.id, hauntedlabrynth.id]
     db.session.add(new_product)
     db.session.commit()
 
@@ -291,7 +291,7 @@ else:
         inflatable scene. The terrifying tree stands tall with \
         its ghoulish companions and spooky Jack-O\'-Lanterns.'
     )
-    new_product.suppliers = [halloweentown, hauntedlabrynth]
+    new_product.suppliers = [halloweentown.id, hauntedlabrynth.id]
     db.session.add(new_product)
     db.session.commit()
 
@@ -306,7 +306,7 @@ else:
             The Ghostbusters Ecto-1. It comes with everything needed for \
             easy outdoor setup.'
     )
-    new_product.suppliers = [halloweentown, hauntedlabrynth]
+    new_product.suppliers = [halloweentown.id, hauntedlabrynth.id]
     db.session.add(new_product)
     db.session.commit()
 
@@ -356,3 +356,67 @@ for o in Order.query.all():
 
 
 # seed with 10 shipments
+
+
+if Shipment.query.count() != 10:
+
+    shipment_1 = Shipment(products=[beetlejuice_sandworm.id])
+    shipment_1.order_id = order_1.id
+    shipment_1.supplier_id = 2
+    shipment_1.tracking_no = '238763482394276021111'
+    db.session.add(shipment_1)
+
+    shipment_2 = Shipment(products=[zero_with_doghouse.id])
+    shipment_2.order_id = order_1.id
+    shipment_2.supplier_id = 3
+    shipment_2.tracking_no = '238763482394276022222'
+    db.session.add(shipment_2)
+
+    shipment_3 = Shipment(products=[tree_with_pumpkins.id])
+    shipment_3.order_id = order_2.id
+    shipment_3.supplier_id = 1
+    shipment_3.tracking_no = '238763482394276023333'
+    db.session.add(shipment_3)
+
+    shipment_4 = Shipment(products=[slimer_with_ghostbusters_mobile.id])
+    shipment_4.order_id = order_2.id
+    shipment_4.supplier_id = 3
+    shipment_4.tracking_no = '238763482394276024444'
+    db.session.add(shipment_4)
+
+    shipment_5 = Shipment(products=[green_and_black_spider.id])
+    shipment_5.order_id = order_3.id
+    shipment_5.supplier_id = 2
+    shipment_5.tracking_no = '238763482394276025555'
+    db.session.add(shipment_5)
+
+    shipment_6 = Shipment(products=[two_headed_dragon.id])
+    shipment_6.order_id = order_3.id
+    shipment_6.supplier_id = 1
+    shipment_6.tracking_no = '238763482394276026666'
+    db.session.add(shipment_6)
+
+    shipment_7 = Shipment(products=[black_cat.id, haunted_castle_archway])
+    shipment_7.order_id = order_4.id
+    shipment_7.supplier_id = 3
+    shipment_7.tracking_no = '238763482394276027777'
+    db.session.add(shipment_7)
+
+    shipment_8 = Shipment(products=[audrey_plant.id])
+    shipment_8.order_id = order_5.id
+    shipment_8.supplier_id = 1
+    shipment_8.tracking_no = '238763482394276029999'
+    db.session.add(shipment_8)
+
+    shipment_9 = Shipment(products=[dragon_with_globe.id])
+    shipment_9.order_id = order_5.id
+    shipment_9.supplier_id = 2
+    shipment_9.tracking_no = '238763482394276021010'
+    db.session.add(shipment_9)
+
+    db.session.commit()
+
+print('\nCreated {} shipments:\n'.format(Shipment.query.count()))
+for s in Shipment.query.all():
+    print(s)
+print('\n\n')
