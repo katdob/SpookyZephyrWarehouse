@@ -73,7 +73,7 @@ class Product(db.Model):
         self.description = description
 
     def __repr__(self):
-        return '<Product {}, {} suppliers: {}>'.format(self.id, self.name, self.suppliers)
+        return '<Product {}, {}>'.format(self.id, self.name)
 
 
 class Shipment(db.Model):

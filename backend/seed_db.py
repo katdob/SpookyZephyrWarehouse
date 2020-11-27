@@ -94,7 +94,7 @@ for c in Customer.query.all():
     print(c)
 kat = Customer.query.all()[0]
 clarence = Customer.query.all()[1]
-fred = kat = Customer.query.all()[2]
+fred = Customer.query.all()[2]
 lana = Customer.query.all()[3]
 millie = Customer.query.all()[4]
 
@@ -168,8 +168,9 @@ if Product.query.filter_by(name='Black Cat').first():
 else:
     new_product = Product(
         name='Black Cat',
-        description='Frighten your guests with this creepy Airblown inflatable character. \
-            The black cat is prepared to pounce into any Halloween scene.'
+        description='Frighten your guests with this creepy '+
+            'inflatable character. The black cat is prepared '+
+            'to pounce into any Halloween scene.'
     )
     new_product.suppliers = [hauntedlabrynth.id]
     db.session.add(new_product)
@@ -181,11 +182,11 @@ if Product.query.filter_by(name='Beetlejuice Sandworm').first():
 else:
     new_product = Product(
         name='Beetlejuice Sandworm',
-        description='Easily add a spooky touch to your Halloween décor \
-            with this 9.5 ft. Pre-Lit Inflatable Animated Beetlejuice \
-            Sandworm WB Airblown. Each scene self-inflates for a quick and \
-            easy setup. All stakes and tethers are included for added security. \
-            Animated: tongue moves from side to side.'
+        description='Easily add a spooky touch to your Halloween décor '+
+            'with this 9.5 ft. Pre-Lit Inflatable Animated Beetlejuice '+
+            'Sandworm WB Airblown. Each scene self-inflates for a quick and '+
+            'easy setup. All stakes and tethers are included for added security.'+
+            'Animated: tongue moves from side to side.'
     )
     new_product.suppliers = [sleepyhollow.id]
     db.session.add(new_product)
@@ -197,10 +198,10 @@ if Product.query.filter_by(name='Little Shop of Horrors Audrey').first():
 else:
     new_product = Product(
         name='Little Shop of Horrors Audrey',
-        description='Amaze your guests with this animated giant \
-        Airblown inflatable featuring Audrey from Little Shop of \
-        Horrors! Audrey comes to life in this amazing Halloween scene \
-        and her tongue moves from side to side.'
+        description='Amaze your guests with this animated giant '+
+        'Airblown inflatable featuring Audrey from Little Shop of '+
+        'Horrors! Audrey comes to life in this amazing Halloween scene '+
+        'and her tongue moves from side to side.'
     )
     new_product.suppliers = [halloweentown.id]
     db.session.add(new_product)
@@ -212,9 +213,9 @@ if Product.query.filter_by(name='Dragon with Globe').first():
 else:
     new_product = Product(
         name='Dragon with Globe',
-        description='Decorate your yard with this incredible \
-        Projection Airblown® Globe. It creates a spooky \
-        Halloween light show with realistic, flickering flames.'
+        description='Decorate your yard with this incredible '+
+        'Projection Airblown® Globe. It creates a spooky '+
+        'Halloween light show with realistic, flickering flames.'
     )
     new_product.suppliers = [sleepyhollow.id]
     db.session.add(new_product)
@@ -226,10 +227,10 @@ if Product.query.filter_by(name='Zero with Doghouse').first():
 else:
     new_product = Product(
         name='Zero with Doghouse',
-        description='Greet your guests and neighbors with the \
-        familiar face of this Airblown® inflatable character. \
-        Zero from The Nightmare Before Christmas stands with his \
-        doghouse in this fun Halloween scene.'
+        description='Greet your guests and neighbors with the '+
+        'familiar face of this Airblown® inflatable character. '+
+        'Zero from The Nightmare Before Christmas stands with his '+
+        'doghouse in this fun Halloween scene.'
     )
     new_product.suppliers = [hauntedlabrynth.id, halloweentown.id, sleepyhollow.id]
     db.session.add(new_product)
@@ -241,11 +242,11 @@ if Product.query.filter_by(name='Two Headed Dragon').first():
 else:
     new_product = Product(
         name='Two Headed Dragon',
-        description='Double trouble awaits you this season \
-        with the Animated Inflatable 2-Headed Dragon. Featuring \
-        an incredible fire-and-ice and flaming mouth lighting \
-        effect, this 2-headed creature will frighten visitors and \
-        trick-or-treaters near and far. Stands over 7-1/2 ft. tall.'
+        description='Double trouble awaits you this season '+
+        'with the Animated Inflatable 2-Headed Dragon. Featuring '+
+        'an incredible fire-and-ice and flaming mouth lighting '+
+        'effect, this 2-headed creature will frighten visitors and '+
+        'trick-or-treaters near and far. Stands over 7-1/2 ft. tall.'
     )
     new_product.suppliers = [halloweentown.id, hauntedlabrynth.id]
     db.session.add(new_product)
@@ -257,11 +258,11 @@ if Product.query.filter_by(name='Haunted Castle Archway').first():
 else:
     new_product = Product(
         name='Haunted Castle Archway',
-        description='Double trouble awaits you this season with \
-        the Animated Inflatable 2-Headed Dragon. Featuring an \
-        incredible fire-and-ice and flaming mouth lighting effect, \
-        this 2-headed creature will frighten visitors and \
-        trick-or-treaters near and far.'
+        description='Double trouble awaits you this season with '+
+        'the Animated Inflatable 2-Headed Dragon. Featuring an '+
+        'incredible fire-and-ice and flaming mouth lighting effect, '+
+        'this 2-headed creature will frighten visitors and'+
+        'trick-or-treaters near and far.'
     )
     new_product.suppliers = [hauntedlabrynth.id]
     db.session.add(new_product)
@@ -273,9 +274,9 @@ if Product.query.filter_by(name='Green and Black Spider').first():
 else:
     new_product = Product(
         name='Green and Black Spider',
-        description='Light up the night with this giant Airblown \
-        Inflatable character. The spider projects psychedelic spirals \
-        of green light from its body.'
+        description='Light up the night with this giant Airblown '+
+        'Inflatable character. The spider projects psychedelic spirals '+
+        'of green light from its body.'
     )
     new_product.suppliers = [sleepyhollow.id, hauntedlabrynth.id]
     db.session.add(new_product)
@@ -287,9 +288,9 @@ if Product.query.filter_by(name='Tree with Pumpkins').first():
 else:
     new_product = Product(
         name='Tree with Pumpkins',
-        description='Frighten your guests with this amazing \
-        inflatable scene. The terrifying tree stands tall with \
-        its ghoulish companions and spooky Jack-O\'-Lanterns.'
+        description='Frighten your guests with this amazing '+
+        'inflatable scene. The terrifying tree stands tall with '+
+        'its ghoulish companions and spooky Jack-O\'-Lanterns.'
     )
     new_product.suppliers = [halloweentown.id, hauntedlabrynth.id]
     db.session.add(new_product)
@@ -301,10 +302,10 @@ if Product.query.filter_by(name='Slimer in Ghostbusters Mobile').first():
 else:
     new_product = Product(
         name='Slimer in Ghostbusters Mobile',
-        description='There\'s something strange in your neighborhood! \
-            This Airblown® Slimer looks spooky as he greets guests from \
-            The Ghostbusters Ecto-1. It comes with everything needed for \
-            easy outdoor setup.'
+        description='There\'s something strange in your neighborhood! '+
+            'This Airblown® Slimer looks spooky as he greets guests from '+
+            'The Ghostbusters Ecto-1. It comes with everything needed for '+
+            'easy outdoor setup.'
     )
     new_product.suppliers = [halloweentown.id, hauntedlabrynth.id]
     db.session.add(new_product)
@@ -395,7 +396,7 @@ if Shipment.query.count() != 10:
     shipment_6.tracking_no = '238763482394276026666'
     db.session.add(shipment_6)
 
-    shipment_7 = Shipment(products=[black_cat.id, haunted_castle_archway])
+    shipment_7 = Shipment(products=[black_cat.id, haunted_castle_archway.id])
     shipment_7.order_id = order_4.id
     shipment_7.supplier_id = 3
     shipment_7.tracking_no = '238763482394276027777'
