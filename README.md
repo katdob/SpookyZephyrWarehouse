@@ -5,10 +5,6 @@
 **To get started, clone this repo.
 `git clone https://github.com/katdob/SpookyZephyrWarehouse.git` and `cd SpookyZephyrWarehouse`.**
 
-### Get the frontend up and running:
-
-WIP! Check back later for updates.
-
 ### Get the backend up and running:
 
 To begin, install [Python 3.8.3](https://www.python.org/).
@@ -40,9 +36,16 @@ You should something like this:
  * Debug mode: off
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 
- If you navigate to `http://127.0.0.1:5000/` in a browser, you'll see the text "Hello, World!".
+If you navigate to `http://127.0.0.1:5000/` in a browser, you'll see the text "Hello, World!".
 
- When you're done, you can simply `deactivate` to end the virtual environment.
+When you're done, you can simply `deactivate` to end the virtual environment.
+
+### Get the frontend up and running:
+
+`cd frontend` and `npm install` to get the basics downloaded.
+`npm start` to get the development server rolling.
+
+You should have the backend running before the frontend, as an API call is made upon render.
 
 ### General information
 
