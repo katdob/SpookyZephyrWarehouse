@@ -45,8 +45,6 @@ When you're done, you can simply `deactivate` to end the virtual environment.
 `cd frontend` and `npm install` to get the basics downloaded.
 `npm start` to get the development server rolling.
 
-You should have the backend running before the frontend, as an API call is made upon render.
-
 ### General information
 
 In `backend/app/__init__.py` you'll find the `uri` variable just underneath the imports at the top of the page. This is the string that [SqlAlchemy]() will use to connect to the database. Go ahead and replace `db_user` (your local database admin user), `db_pw` (database password), `db_port` (whatever port MySQL is available on on your machine) with whatever is compatible with your setup. You'll notice that we're using `pymysql` in the `ENGINE` definition.

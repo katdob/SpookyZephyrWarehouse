@@ -38,7 +38,28 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 SQLALCHEMY_DATABASE_URI = uri
 SQLALCHEMY_BINDS = ''
 SQLALCHEMY_TRACK_MODIFICATIONS = False
-db = SQLAlchemy(app)
+
+db = SQLAlchemy(app, session_options={'expire_on_commit': False, })
+db.metadata.bind = db.engine
+db.metadata.reflect = True
+db_session = scoped_session(
+    sessionmaker(
+        autocommit=False,
+        autoflush=False, bind=db.engine
+    )
+)
+Base = declarative_base()
+Base.query = db_session.query_property()
+db.create_all()
 migrate = Migrate(app, db)
+
+# DB = SQLAlchemy(APP, session_options={'expire_on_commit': False, })
+# DB.metadata.bind = DB.engine
+# DB.metadata.reflect = True
+# DB_SESSION = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=DB.engine))
+# Base = declarative_base()
+# Base.query = DB_SESSION.query_property()
+# DB.create_all()
+# MIGRATE = Migrate(APP, DB)
 
 from . import routes, models
